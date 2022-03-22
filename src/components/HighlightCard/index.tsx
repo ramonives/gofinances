@@ -1,5 +1,4 @@
 import React from "react";
-import { View, Text } from "react-native";
 
 import {
   Container,
@@ -11,12 +10,12 @@ import {
   LastTransaction,
 } from "./styles";
 
-type HighlightCardProps = {
+interface IHighlightCardProps {
   type: "up" | "down" | "total";
   title: string;
   amount: string;
   lastTransaction: string;
-};
+}
 
 const icon = {
   up: "arrow-up-circle",
@@ -29,7 +28,7 @@ export function HighlightCard({
   title,
   amount,
   lastTransaction,
-}: HighlightCardProps) {
+}: IHighlightCardProps) {
   return (
     <Container type={type}>
       <Header>

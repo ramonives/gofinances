@@ -2,11 +2,11 @@ import styled, { css } from "styled-components/native";
 import { Feather } from "@expo/vector-icons";
 import { RFValue } from "react-native-responsive-fontsize";
 
-type StyledProps = {
+interface IStyledProps {
   type: "up" | "down" | "total";
-};
+}
 
-export const Container = styled.View<StyledProps>`
+export const Container = styled.View<IStyledProps>`
   background-color: ${({ theme, type }) =>
     type === "total" ? theme.colors.secondary : theme.colors.shape};
 
@@ -22,14 +22,14 @@ export const Header = styled.View`
   justify-content: space-between;
 `;
 
-export const Title = styled.Text<StyledProps>`
+export const Title = styled.Text<IStyledProps>`
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: ${RFValue(14)}px;
   color: ${({ theme, type }) =>
     type === "total" ? theme.colors.shape : theme.colors.title};
 `;
 
-export const Icon = styled(Feather)<StyledProps>`
+export const Icon = styled(Feather)<IStyledProps>`
   font-size: ${RFValue(40)}px;
 
   ${({ type }) =>
@@ -53,7 +53,7 @@ export const Icon = styled(Feather)<StyledProps>`
 
 export const Footer = styled.View``;
 
-export const Amount = styled.Text<StyledProps>`
+export const Amount = styled.Text<IStyledProps>`
   font-family: ${({ theme }) => theme.fonts.medium};
   font-size: ${RFValue(32)}px;
   color: ${({ theme, type }) =>
@@ -62,7 +62,7 @@ export const Amount = styled.Text<StyledProps>`
   margin-top: ${RFValue(38)}px;
 `;
 
-export const LastTransaction = styled.Text<StyledProps>`
+export const LastTransaction = styled.Text<IStyledProps>`
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: ${RFValue(12)}px;
   color: ${({ theme, type }) =>
