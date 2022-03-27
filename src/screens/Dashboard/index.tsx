@@ -1,5 +1,5 @@
 import React from "react";
-import { getBottomSpace } from "react-native-iphone-x-helper";
+
 import { HighlightCard } from "../../components/HighlightCard";
 import {
   TransactionCard,
@@ -15,6 +15,7 @@ import {
   UserInfo,
   UserName,
   UserWrapper,
+  LogoutButton,
   Icon,
   HighlightCards,
   Transactions,
@@ -78,7 +79,9 @@ export function Dashboard() {
               <UserName>Ramon</UserName>
             </User>
           </UserInfo>
-          <Icon name="power" />
+          <LogoutButton>
+            <Icon name="power" />
+          </LogoutButton>
         </UserWrapper>
       </Header>
       <HighlightCards>
